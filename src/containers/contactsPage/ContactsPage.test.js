@@ -1,10 +1,9 @@
+import React from "react";
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
+
+import { ContactsPage } from "./ContactsPage";
+
 describe("The Contacts Page component", () => {
-    it(`has a form for to create a new contact`, () => {
-        //Arrange
-        //ensure form has name input, phone input, email input, and create button
-        //Act
-        // render component
-        //Assert
-        // ensure elements are rendered.
-    });
+    it(`the handle submit function creates a new contact when contact not found in contact list`, () => {});
 });
