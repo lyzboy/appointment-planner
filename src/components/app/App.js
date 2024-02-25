@@ -13,8 +13,8 @@ export function AppRoutes() {
     const [contacts, setContacts] = useState([]);
     const [appointments, setAppointments] = useState([]);
 
-    const addContact = ({ name, phoneNumber, email }) => {
-        const newContact = { name, phoneNumber, email };
+    const addContact = ({ name, phone, email }) => {
+        const newContact = { name, phone, email };
         setContacts((prev) => [...prev, newContact]);
     };
 
