@@ -1,4 +1,5 @@
 import React from "react";
+import { formatPhoneNumber } from "../../utils/contactsUtilities";
 
 export const ContactForm = ({
     name,
@@ -8,9 +9,20 @@ export const ContactForm = ({
     email,
     setEmail,
     handleSubmit,
+    duplicateContact,
+    setDuplicateContact,
 }) => {
     return (
         <>
+            <p
+                style={
+                    duplicateContact
+                        ? { display: "block" }
+                        : { display: "none" }
+                }
+            >
+                There is already a contact with that name
+            </p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="contactName">
                     Name:
@@ -21,7 +33,9 @@ export const ContactForm = ({
                         value={name}
                         onChange={(e) => {
                             setName(e.target.value);
+                            setDuplicateContact(false);
                         }}
+                        required
                     />
                 </label>
                 <label htmlFor="phone">
@@ -31,9 +45,11 @@ export const ContactForm = ({
                         id="phone"
                         name="phone"
                         value={phone}
+                        pattern="^\(\d{3}\)\d{3}-\d{4}$"
                         onChange={(e) => {
-                            setPhone(e.target.value);
+                            setPhone(formatPhoneNumber(e.target.value));
                         }}
+                        required
                     />
                 </label>
                 <label htmlFor="email">
@@ -46,6 +62,7 @@ export const ContactForm = ({
                         onChange={(e) => {
                             setEmail(e.target.value);
                         }}
+                        required
                     />
                 </label>
                 <button type="submit">Create Contact</button>

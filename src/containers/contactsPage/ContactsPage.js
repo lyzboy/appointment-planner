@@ -5,7 +5,7 @@ import { TileList } from "../../components/tileList/TileList";
 
 import { contactsContainName } from "../../utils/contactsUtilities";
 
-export const ContactsPage = ({ contacts, addContacts }) => {
+export const ContactsPage = ({ contacts, addContact }) => {
     useEffect(() => {
         document.title = "Contacts";
     });
@@ -16,6 +16,7 @@ export const ContactsPage = ({ contacts, addContacts }) => {
     const [name, setName] = useState(``);
     const [phone, setPhone] = useState(``);
     const [email, setEmail] = useState(``);
+    const [duplicateContact, setDuplicateContact] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,10 +25,12 @@ export const ContactsPage = ({ contacts, addContacts }) => {
     if the contact name is not a duplicate
     */
         if (!contactsContainName(contacts, name)) {
-            addContacts(name, phone, email);
+            addContact(name, phone, email);
             setName(``);
             setPhone(``);
             setEmail(``);
+        } else {
+            setDuplicateContact(true);
         }
     };
 
@@ -53,6 +56,8 @@ export const ContactsPage = ({ contacts, addContacts }) => {
                     email={email}
                     setEmail={setEmail}
                     handleSubmit={handleSubmit}
+                    duplicateContact={duplicateContact}
+                    setDuplicateContact={setDuplicateContact}
                 />
             </section>
             <hr />
