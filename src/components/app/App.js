@@ -40,28 +40,36 @@ export function AppRoutes() {
 
     return (
         <Routes>
-            <Route path="/" element={<Navigate to={ROUTES.CONTACTS} />} />
-            <Route
-                path={ROUTES.CONTACTS}
-                element={
-                    <ContactsPage contacts={contacts} addContact={addContact} />
-                }
-            />
-            <Route
-                path={ROUTES.APPOINTMENTS}
-                element={
-                    <AppointmentsPage
-                        appointments={appointments}
-                        addAppointment={addAppointment}
-                    />
-                }
-            />
-            <Route
-                path="*"
-                element={
-                    <ContactsPage contacts={contacts} addContact={addContact} />
-                }
-            />
+            <Route path="/" element={<Root />}>
+                <Route index element={<Navigate to={ROUTES.CONTACTS} />} />
+                <Route
+                    path={ROUTES.CONTACTS}
+                    element={
+                        <ContactsPage
+                            contacts={contacts}
+                            addContact={addContact}
+                        />
+                    }
+                />
+                <Route
+                    path={ROUTES.APPOINTMENTS}
+                    element={
+                        <AppointmentsPage
+                            appointments={appointments}
+                            addAppointment={addAppointment}
+                        />
+                    }
+                />
+                <Route
+                    path="*"
+                    element={
+                        <ContactsPage
+                            contacts={contacts}
+                            addContact={addContact}
+                        />
+                    }
+                />
+            </Route>
         </Routes>
     );
 }
