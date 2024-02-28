@@ -1,0 +1,18 @@
+.tileList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    .tileList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tileList {
+        grid-template-columns: 1fr;
+    }
+}
