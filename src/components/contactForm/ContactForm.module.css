@@ -1,0 +1,22 @@
+.submitButton {
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    background-color: rgb(24, 219, 180);
+    font-weight: 700;
+    border-radius: 1rem;
+    transition: all 0.1s ease-out;
+}
+
+.submitButton:hover {
+    background-color: rgb(24, 219, 180);
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:active {
+    background-color: rgb(24, 198, 163);
+    transform: translateY(3px);
+    box-shadow: inset 1px 3px rgba(0, 0, 0, 0.2);
+}

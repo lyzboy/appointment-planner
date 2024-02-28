@@ -1,6 +1,8 @@
 import React from "react";
 import { formatPhoneNumber } from "../../utils/contactsUtilities";
 
+import styles from "./ContactForm.module.css";
+
 export const ContactForm = ({
     name,
     setName,
@@ -65,7 +67,9 @@ export const ContactForm = ({
                         required
                     />
                 </label>
-                <button type="submit">Create Contact</button>
+                <button type="submit" className={styles.submitButton}>
+                    Create Contact
+                </button>
             </form>
         </>
     );
