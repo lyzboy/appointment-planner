@@ -1,0 +1,13 @@
+.tile {
+    background-color: rgb(255, 254, 254);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: solid 2px rgb(185, 184, 184);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tile_title {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
