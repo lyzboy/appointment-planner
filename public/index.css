@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: rgb(10, 86, 71);
 }
 
 #root {
@@ -13,17 +14,33 @@ nav > a {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    color: #000000;
+    /* color: #000000; */
     margin-right: 30.5px;
     text-decoration-line: none;
+
+    padding: 10px;
+    border: none;
+    background-color: rgb(24, 219, 180);
+    border-radius: 5px;
+    transition: all 0.1s ease-out;
+}
+
+nav > a:hover {
+    background-color: rgb(24, 219, 180);
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 nav > a.active {
-    text-decoration-line: underline;
+    font-weight: 700;
+    background-color: rgb(24, 198, 163);
+    transform: translateY(3px);
+    box-shadow: inset 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 nav {
-    padding-bottom: 20px;
+    padding: 20px 0;
     border-bottom: 1px solid #979797;
     margin-bottom: 20px;
 }
@@ -31,12 +48,13 @@ nav {
 h2 {
     font-weight: bold;
     font-size: 18px;
-    color: #000000;
+    color: rgb(10, 86, 71);
     margin: 0;
     margin-bottom: 18px;
 }
 
-section {
+h1 {
+    margin-bottom: 1rem;
 }
 
 hr {
