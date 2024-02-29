@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(10, 86, 71);
+    color: var(--text-color);
+}
+
+:root {
+    --bg-color: rgb(24, 198, 163);
+    --text-color: rgb(11, 60, 50);
 }
 
 #root {
@@ -20,13 +25,13 @@ nav > a {
 
     padding: 10px;
     border: none;
-    background-color: rgb(24, 219, 180);
+    background-color: var(--bg-color);
     border-radius: 5px;
     transition: all 0.1s ease-out;
 }
 
 nav > a:hover {
-    background-color: rgb(24, 219, 180);
+    background-color: var(--bg-color);
     cursor: pointer;
     transform: translateY(-3px);
     box-shadow: 1px 3px rgba(0, 0, 0, 0.2);
@@ -34,7 +39,7 @@ nav > a:hover {
 
 nav > a.active {
     font-weight: 700;
-    background-color: rgb(24, 198, 163);
+    background-color: var(--bg-color);
     transform: translateY(3px);
     box-shadow: inset 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -48,7 +53,7 @@ nav {
 h2 {
     font-weight: bold;
     font-size: 18px;
-    color: rgb(10, 86, 71);
+    color: var(--text-color);
     margin: 0;
     margin-bottom: 18px;
 }

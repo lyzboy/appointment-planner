@@ -9,7 +9,7 @@ export const Tile = ({ name, description }) => {
             {Object.entries(description).map(([key, value]) => {
                 return (
                     <p className="tile" key={key}>
-                        {value}
+                        {typeof value === "object" ? value.toString() : value}
                     </p>
                 );
             })}

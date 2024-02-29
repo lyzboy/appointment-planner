@@ -18,8 +18,16 @@ export function AppRoutes() {
         setContacts((prev) => [...prev, newContact]);
     };
 
+    /**
+     * adds an appointment to the app
+     * @param {String} name
+     * @param {Object} contact
+     * @param {Date} date
+     * @param {Date} time
+     */
     const addAppointment = (name, contact, date, time) => {
         const newAppointment = { name, contact, date, time };
+        console.log(contact);
         setAppointments((prev) => [...prev, newAppointment]);
     };
 
@@ -56,6 +64,7 @@ export function AppRoutes() {
                     element={
                         <AppointmentsPage
                             appointments={appointments}
+                            contacts={contacts}
                             addAppointment={addAppointment}
                         />
                     }
